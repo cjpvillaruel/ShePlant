@@ -35,10 +35,10 @@ class Firebase {
 
     if (response.data) {
       localStorage.setItem("userId", response.data.id);
-      localStorage.setItem("firstName", response.firstName);
-      localStorage.setItem("lastName", response.lastName);
+      localStorage.setItem("firstName", response.data.first_name);
+      localStorage.setItem("lastName", response.data.last_name);
       console.log(response.data);
-      console.log(localStorage.getItem("id"));
+      console.log(localStorage.getItem("userId"));
     } else {
       console.log("Error adding user");
     }
@@ -55,8 +55,8 @@ class Firebase {
 
     if (response.data) {
       localStorage.setItem("userId", response.data.id);
-      localStorage.setItem("firstName", response.firstName);
-      localStorage.setItem("lastName", response.lastName);
+      localStorage.setItem("firstName", response.data.first_name);
+      localStorage.setItem("lastName", response.data.last_name);
       console.log(response.data);
       console.log(localStorage.getItem("userId"));
     } else {

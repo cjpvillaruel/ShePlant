@@ -12,12 +12,12 @@ class Step1Page extends Component {
     return (
       <div className="main home step1">
         <div className="wrapper ">
-          <Zoom top>
+          <Fade top delay={100} duration={1000}>
             <p>Here’s a seed</p>
             <p>for you…</p>
             <p className="small">(you get to plant a seed every time you pledge)</p>
-          </Zoom>
-          <Fade top delay={1000}>
+          </Fade>
+          <Fade top delay={800} duration={1000}>
             <div className="round"><img src={ImgSeed} alt="seed" /></div>
          </Fade>
           <Link  className="btn-link" to={ROUTES.STEP2}>Next</Link>
