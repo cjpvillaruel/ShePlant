@@ -20,7 +20,7 @@ class HomePage extends Component {
             <p>You are almost</p>
             <p>ready,</p>
             <p>
-              <b>Clariza!</b>
+              <b>{localStorage.getItem("firstName")}!</b>
             </p>
           </Zoom>
           <Link className="btn-link" to={ROUTES.STEP1}>

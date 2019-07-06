@@ -7,6 +7,7 @@ import SignOutButton from "../components/SignOutButton/SignOutButton";
 
 const INITIAL_STATE = {
   pledges: [],
+  personalPledges: [],
   pageLoaded: false
 };
 
@@ -18,8 +19,16 @@ class PledgePage extends Component {
 
   async componentDidMount() {
     try {
-      const { data } = await axios.get(`/pledges`);
-      this.setState({ pledges: data });
+      const personalPledgesData = await axios.get(
+        `/users/${localStorage.getItem("userId")}/pledges`
+      );
+      const pledgesData = await axios.get(`/pledges`);
+      this.setState({
+        personalPledges: personalPledgesData.data,
+        pledges: pledgesData.data,
+        pageLoaded: true
+      });
+      console.log(this.state);
     } catch (err) {
       console.log(err.response);
     }
@@ -32,6 +41,7 @@ class PledgePage extends Component {
       );
       if (data) {
         console.log(data);
+        window.location.reload();
       }
     } catch (err) {
       console.log(err.response);
@@ -41,9 +51,15 @@ class PledgePage extends Component {
   render = () => {
     return (
       <Fragment>
-        {this.state.pledges.length === 0 && this.state.pageLoaded ? (
-          <p>No pledges yet!</p>
+        {/* Plant */}
+        {this.state.personalPledges.length > 0 ? (
+          <Fragment>
+            <p>Plant should be here</p>
+            <p>Pledge: {this.state.personalPledges[0].title}</p>
+            <p>Description: {this.state.personalPledges[0].description}</p>
+          </Fragment>
         ) : (
+          // Pledges to Join
           <Fragment>
             {this.state.pledges.map(item => (
               <Fragment key={item.id}>
