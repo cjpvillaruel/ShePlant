@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 
 import * as ROUTES from "../constants/routes";
 import { withFirebase } from "../components/Firebase";
-import Zoom from "react-reveal/Bounce";
+import Fade from "react-reveal/Fade";
 
 const INITIAL_STATE = {};
 class HomePage extends Component {
@@ -16,13 +16,13 @@ class HomePage extends Component {
     return (
       <div className="main home home1">
         <div className="wrapper">
-          <Zoom top>
+          <Fade top delay={100} duration={1000}>
             <p>You are almost</p>
             <p>ready,</p>
             <p>
               <b>Clariza!</b>
             </p>
-          </Zoom>
+          </Fade>
           <Link className="btn-link" to={ROUTES.STEP1}>
             Next
           </Link>
