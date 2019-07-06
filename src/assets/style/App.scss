@@ -57,6 +57,7 @@ a {
   background-repeat-x: repeat;
   background-position: bottom;
   height:calc(100vh - 52px);
+  background-size: contain !important;
 }
 
 body {
