@@ -12,6 +12,7 @@ import PersonalPledgePage from "./pages/PersonalPledgePage";
 import Step1Page from "./pages/Step1Page";
 import Step2Page from "./pages/Step2Page";
 import Step3Page from "./pages/Step3Page";
+import PledgeDetailPage from "./pages/PledgeDetailPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path={ROUTES.STEP1} component={Step1Page} />
         <Route path={ROUTES.STEP2} component={Step2Page} />
         <Route path={ROUTES.STEP3} component={Step3Page} />
+        <Route path="/pledge/:id" component={PledgeDetailPage} />
       </div>
     </Router>
   );
