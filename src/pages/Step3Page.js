@@ -12,15 +12,15 @@ class Step3Page extends Component {
     return (
       <div className="main home step3">
         <div className="wrapper">
-        <Zoom top>
+        <Fade top delay={100} duration={1000}>
             <p>Because from a </p>
             <p>small seed,</p>
             <p>Hope blossoms.</p>
-          </Zoom>
+          </Fade>
           <Fade top delay={1000}>
             <div className="round"><img src={ImgPlant} alt="Plant" /></div>
          </Fade>
-          {/* <Link  className="btn-link" to={ROUTES.STEP2}>Next</Link> */}
+          <Link  className="btn-link" to={ROUTES.STEP3}>Let's gets started!</Link>
         </div>
       </div>
     );
