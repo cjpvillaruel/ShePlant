@@ -6,11 +6,10 @@ import { withFirebase } from "../components/Firebase";
 import SignOutButton from "../components/SignOutButton/SignOutButton";
 
 const INITIAL_STATE = {
-  pledges: [],
-  pageLoaded: false
+  pledges: []
 };
 
-class PledgePage extends Component {
+class PersonalPledgePage extends Component {
   constructor(props) {
     super(props);
     this.state = { ...INITIAL_STATE };
@@ -18,28 +17,19 @@ class PledgePage extends Component {
 
   async componentDidMount() {
     try {
-      const { data } = await axios.get(`/pledges`);
+      const { data } = await axios.get(
+        `/users/${localStorage.getItem("userId")}/pledges`
+      );
       this.setState({ pledges: data });
     } catch (err) {
       console.log(err.response);
     }
   }
 
-  joinPledge = async userId => {
-    try {
-      const { data } = await axios.post(`/users/${userId}`);
-      if (data) {
-        console.log(data);
-      }
-    } catch (err) {
-      console.log(err.response);
-    }
-  };
-
   render = () => {
     return (
       <Fragment>
-        {this.state.pledges.length === 0 && this.state.pageLoaded ? (
+        {this.state.pledges.length === 0 ? (
           <p>No pledges yet!</p>
         ) : (
           <Fragment>
@@ -62,4 +52,4 @@ class PledgePage extends Component {
   };
 }
 
-export default withRouter(withFirebase(PledgePage));
+export default withRouter(withFirebase(PersonalPledgePage));

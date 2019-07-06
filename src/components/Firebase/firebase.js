@@ -16,10 +16,6 @@ class Firebase {
   constructor() {
     app.initializeApp(config);
     this.auth = app.auth();
-    this.state = {
-      firstName: "",
-      lastName: ""
-    };
   }
 
   doCreateUserWithEmailAndPassword = async (
@@ -38,12 +34,11 @@ class Firebase {
     });
 
     if (response.data) {
-      this.state = {
-        firstName: response.data.first_name,
-        lastName: response.data.last_name
-      };
+      localStorage.setItem("userId", response.data.id);
+      localStorage.setItem("firstName", response.firstName);
+      localStorage.setItem("lastName", response.lastName);
       console.log(response.data);
-      console.log(this.state);
+      console.log(localStorage.getItem("id"));
     } else {
       console.log("Error adding user");
     }
@@ -59,12 +54,11 @@ class Firebase {
     });
 
     if (response.data) {
-      this.state = {
-        firstName: response.data.first_name,
-        lastName: response.data.last_name
-      };
+      localStorage.setItem("userId", response.data.id);
+      localStorage.setItem("firstName", response.firstName);
+      localStorage.setItem("lastName", response.lastName);
       console.log(response.data);
-      console.log(this.state);
+      console.log(localStorage.getItem("userId"));
     } else {
       console.log("Error signing in");
     }
