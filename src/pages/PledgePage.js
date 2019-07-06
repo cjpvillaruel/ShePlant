@@ -57,6 +57,7 @@ class PledgePage extends Component {
             <p>Plant should be here</p>
             <p>Pledge: {this.state.personalPledges[0].title}</p>
             <p>Description: {this.state.personalPledges[0].description}</p>
+            <SignOutButton />
           </Fragment>
         ) : (
           // Pledges to Join
