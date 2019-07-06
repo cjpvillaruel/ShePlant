@@ -1,0 +1,81 @@
+.navbar {
+  height: 50px;
+  background-color: #BD2D7A;	box-shadow: 2px 2px 21px 3px rgba(0,0,0,0.07);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    margin: 0;
+    color: white;
+  }
+
+  .menu-icon {
+    width: 15px;
+    margin: 0 30px;
+  }
+  .option-icon {
+    height: 16px;
+    margin: 0 30px;
+  }
+}
+
+.pledge-container {
+  padding: 20px;
+}
+
+.pledge-card {
+  display: flex; 
+  padding: 20px 0;
+  border-bottom: 1px solid gray;
+
+  .details {
+    width: 65%
+  }
+
+  .seed-per-pledge {
+    position: absolute;
+    right: 20px;
+    height: 60px;
+  }
+
+  .thumbnail {
+    height: 150px;
+    width: 100px;
+    margin-right: 10px;
+    background-color: #C9CBC8;
+    box-shadow: 2px 2px 21px 3px rgba(0,0,0,0.1);
+    background-size: cover;
+    background-position: center;
+  }
+  .title {
+    color: #C8689B;
+    font-family: Roboto;
+    font-size: 16px;
+    margin: .5em 0;
+  }
+  button {
+    background-color: #6C8C10;
+    box-shadow: 2px 2px 21px 3px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-size: 11px;
+    border-radius: 10px;
+    margin: 0 9px;
+  }
+
+  .description {
+    margin: .5em 0;
+    color: #757575;
+    word-wrap: break-word;
+    height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .duration {
+    color: #757575;
+    span {
+      font-size: 10px;
+    }
+    font-size: 12px;
+  }
+}
