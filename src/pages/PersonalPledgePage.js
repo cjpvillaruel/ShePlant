@@ -6,7 +6,8 @@ import { withFirebase } from "../components/Firebase";
 import SignOutButton from "../components/SignOutButton/SignOutButton";
 
 const INITIAL_STATE = {
-  pledges: []
+  pledges: [],
+  pageLoaded: false
 };
 
 class PersonalPledgePage extends Component {
@@ -20,7 +21,7 @@ class PersonalPledgePage extends Component {
       const { data } = await axios.get(
         `/users/${localStorage.getItem("userId")}/pledges`
       );
-      this.setState({ pledges: data });
+      this.setState({ pledges: data, pageLoaded: true });
     } catch (err) {
       console.log(err.response);
     }
@@ -29,7 +30,7 @@ class PersonalPledgePage extends Component {
   render = () => {
     return (
       <Fragment>
-        {this.state.pledges.length === 0 ? (
+        {this.state.pledges.length === 0 && this.state.pageLoaded ? (
           <p>No pledges yet!</p>
         ) : (
           <Fragment>
@@ -42,7 +43,7 @@ class PersonalPledgePage extends Component {
                 <p>{item.created_at}</p>
                 <p>{item.updated_at}</p>
                 <p>{item.category}</p>
-                <button>Join Pledge</button>
+                <button>Open Pledge</button>
               </Fragment>
             ))}
           </Fragment>

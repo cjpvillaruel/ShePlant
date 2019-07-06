@@ -25,9 +25,11 @@ class PledgePage extends Component {
     }
   }
 
-  joinPledge = async userId => {
+  joinPledge = async pledgeId => {
     try {
-      const { data } = await axios.post(`/users/${userId}`);
+      const { data } = await axios.post(
+        `users/${localStorage.getItem("userId")}/pledges?pledge_id=${pledgeId}`
+      );
       if (data) {
         console.log(data);
       }
@@ -52,7 +54,9 @@ class PledgePage extends Component {
                 <p>{item.created_at}</p>
                 <p>{item.updated_at}</p>
                 <p>{item.category}</p>
-                <button>Join Pledge</button>
+                <button onClick={() => this.joinPledge(item.id)}>
+                  Join Pledge
+                </button>
               </Fragment>
             ))}
           </Fragment>
