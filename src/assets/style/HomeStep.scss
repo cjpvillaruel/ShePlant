@@ -40,7 +40,7 @@
         }
     }
     &.step1 {
-        background: #9DBF7F url('../images/waves-light.png');
+        background: #9DBF7F url('../images/waves-dark.png');
         color: #fff;
         background-repeat-y: no-repeat;
         background-repeat-x: repeat;
@@ -54,6 +54,21 @@
         }
         .btn-link {
             color: #fff;
+        }
+    }
+    &.step2 {
+        background: #DEBBAA url('../images/waves-dark.png');
+        background-repeat-y: no-repeat;
+        background-repeat-x: repeat;
+        background-position: bottom;
+        p {
+            color: #fff;
+        }
+        .btn-link {
+            color: #fff;
+        }
+        .round {
+            margin: 20px auto 0;
         }
     }
 }
