@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from "react";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
+import * as ROUTES from "../constants/routes";
 import { withFirebase } from "../components/Firebase";
-import SignOutButton from "../components/SignOutButton/SignOutButton";
+import Zoom from "react-reveal/Bounce";
 
 const INITIAL_STATE = {};
 class HomePage extends Component {
@@ -12,11 +13,21 @@ class HomePage extends Component {
   }
 
   render = () => {
-    const { error } = this.state;
     return (
-      <Fragment>
-        <SignOutButton />
-      </Fragment>
+      <div className="main home home1">
+        <div className="wrapper">
+          <Zoom top>
+            <p>You are almost</p>
+            <p>ready,</p>
+            <p>
+              <b>Clariza!</b>
+            </p>
+          </Zoom>
+          <Link className="btn-link" to={ROUTES.STEP1}>
+            Next
+          </Link>
+        </div>
+      </div>
     );
   };
 }
