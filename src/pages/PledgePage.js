@@ -54,6 +54,7 @@ class PledgePage extends Component {
                 <p>{item.created_at}</p>
                 <p>{item.updated_at}</p>
                 <p>{item.category}</p>
+                <button>Open Pledge</button>
                 <button onClick={() => this.joinPledge(item.id)}>
                   Join Pledge
                 </button>
