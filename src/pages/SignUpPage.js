@@ -11,6 +11,7 @@ const INITIAL_STATE = {
   lastName: "",
   error: null
 };
+
 class SignUpPage extends Component {
   constructor(props) {
     super(props);
@@ -19,12 +20,12 @@ class SignUpPage extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    const { email, password } = this.state;
+    const { email, password, firstName, lastName } = this.state;
 
     this.setState({ submitted: true });
 
     this.props.firebase
-      .doCreateUserWithEmailAndPassword(email, password)
+      .doCreateUserWithEmailAndPassword(email, password, firstName, lastName)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.HOME);
@@ -64,16 +65,16 @@ class SignUpPage extends Component {
           {/* First Name */}
           <label>First Name:</label>
           <input
-            id="firstname"
-            name="firstname"
+            id="firstName"
+            name="firstName"
             placeholder="Enter your first name"
             onChange={this.onChange}
           />
           {/* Last Name */}
           <label>Last Name:</label>
           <input
-            id="lastname"
-            name="lastname"
+            id="lastName"
+            name="lastName"
             placeholder="Enter your last name"
             onChange={this.onChange}
           />

@@ -1,3 +1,4 @@
+import axios from "axios";
 import app from "firebase/app";
 import "firebase/auth";
 
@@ -14,15 +15,60 @@ const config = {
 class Firebase {
   constructor() {
     app.initializeApp(config);
-
     this.auth = app.auth();
+    this.state = {
+      firstName: "",
+      lastName: ""
+    };
   }
 
-  doCreateUserWithEmailAndPassword = (email, password) =>
-    this.auth.createUserWithEmailAndPassword(email, password);
+  doCreateUserWithEmailAndPassword = async (
+    email,
+    password,
+    firstName,
+    lastName
+  ) => {
+    await this.auth.createUserWithEmailAndPassword(email, password);
+    // creates a user in app db
+    const response = await axios.post(`users`, {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      firebase_id: this.auth.currentUser.uid
+    });
 
-  doSignInWithEmailAndPassword = (email, password) =>
-    this.auth.signInWithEmailAndPassword(email, password);
+    if (response.data) {
+      this.state = {
+        firstName: response.data.first_name,
+        lastName: response.data.last_name
+      };
+      console.log(response.data);
+      console.log(this.state);
+    } else {
+      console.log("Error adding user");
+    }
+  };
+
+  doSignInWithEmailAndPassword = async (email, password) => {
+    await this.auth.signInWithEmailAndPassword(email, password);
+    // work around to retrieve user based on firebase id
+    const response = await axios.get(`users/1`, {
+      params: {
+        firebase_id: this.auth.currentUser.uid
+      }
+    });
+
+    if (response.data) {
+      this.state = {
+        firstName: response.data.first_name,
+        lastName: response.data.last_name
+      };
+      console.log(response.data);
+      console.log(this.state);
+    } else {
+      console.log("Error signing in");
+    }
+  };
 
   doSignOut = () => this.auth.signOut();
 }
