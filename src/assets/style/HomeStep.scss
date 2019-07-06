@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height:calc(100vh - 52px);
     justify-content: center;
     text-align: center;
     .round {
@@ -69,6 +69,32 @@
         }
         .round {
             margin: 20px auto 0;
+        }
+    }
+    &.step3 {
+        background: #AD547B url('../images/waves-dark.png');
+        background-repeat-y: no-repeat;
+        background-repeat-x: repeat;
+        background-position: bottom;
+        p {
+            color: #fff;
+        }
+        .btn-link {
+            color: #fff;
+        }
+        .round {
+            margin: 20px auto 0;
+            img {
+                max-width: 66%;
+                padding: 0px 11px;
+                align-self: center;
+            }
+        }
+        .btn-link {
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 10px 4px;
+            border-radius: 50px;
         }
     }
 }
