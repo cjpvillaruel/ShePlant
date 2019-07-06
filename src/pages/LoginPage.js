@@ -5,6 +5,10 @@ import * as ROUTES from "../constants/routes";
 import { withFirebase } from "../components/Firebase";
 // import { SignUpLink } from "../SignUp";
 
+import Logo from '../assets/images/logo.png';
+import IconLock from '../assets/images/icon-lock.png';
+import IconUser from '../assets/images/icon-user.png';
+
 const INITIAL_STATE = {
   email: "",
   password: "",
@@ -38,25 +42,34 @@ class LoginPage extends Component {
     const { error } = this.state;
     return (
       <Fragment>
-        <form onSubmit={this.onSubmit}>
-          <label>Email:</label>
-          <input
-            id="email"
-            name="email"
-            placeholder="Enter your email"
-            onChange={this.onChange}
-          />
-          <label>Password:</label>
-          <input
-            id="password"
-            type="password"
-            name="password"
-            placeholder="Enter your password"
-            onChange={this.onChange}
-          />
-          <input type="submit" value="Submit" />
-        </form>
-        <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+        <div className="main">
+          <div className="wrapper login">
+            <form onSubmit={this.onSubmit}>
+              <img src={Logo} alt="Logo" className="logo"/>
+              <div className="input-wrap">
+                <img src={IconUser} alt="Icon User" />
+                <input className="input"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  onChange={this.onChange}
+                />
+              </div>
+              <div className="input-wrap">
+                <img src={IconLock} alt="Icon Lock" />
+                <input className="input"
+                  id="password"
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  onChange={this.onChange}
+                />
+              </div>
+              <input className="btn-green btn" type="submit" value="Login" />
+              <Link to={ROUTES.SIGN_UP}>Register</Link>
+            </form>
+          </div>
+        </div>
       </Fragment>
     );
   };

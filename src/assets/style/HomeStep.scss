@@ -1,0 +1,59 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    .round {
+        background: #fff;
+        padding: 20px;
+        border-radius: 100%;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+        display: flex;
+        img {
+            max-width: 55%;
+            padding: 20px;
+            align-self: center;
+        }
+    }
+    p {
+        line-height: 1.2;
+        margin: 0;
+        font-size: 28px;
+        text-align: center;
+    }
+    &.home1 {
+        p {
+            margin: 0;
+            font-size: 28px;
+            text-align: center;
+            color: #C8689B;
+            b {
+                line-height: 1.6;
+            }
+        }
+        .btn-link {
+            color: #6C8C10;
+        }
+    }
+    &.step1 {
+        background: #9DBF7F url('../images/waves-light.png');
+        color: #fff;
+        background-repeat-y: no-repeat;
+        background-repeat-x: repeat;
+        background-position: bottom;
+        p {
+            &.small {
+                font-size: 14px;
+                margin: 20px 0;
+                line-height: 1.5;
+            }
+        }
+        .btn-link {
+            color: #fff;
+        }
+    }
+}
