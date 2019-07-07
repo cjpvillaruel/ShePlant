@@ -69,7 +69,7 @@ class PledgePage extends Component {
           </Fragment>
         ) : (
           <Fragment>
-            <NavBar />
+            <NavBar title="Pledges"/>
             <div className="banner">
             
             </div>
@@ -85,7 +85,7 @@ class PledgePage extends Component {
                     <img className="seed-per-pledge" src={Seed} alt="option" />
                     <h4 className="title" >{item.title}</h4>
                     <p className="duration"><label>Duration:</label>30 days</p>
-                    <p className="description">{`${item.description.substr(1, 55)}...`}</p>    
+                    <p className="description">{`${item.description.substr(0, 55)}...`}</p>    
                     <Link to={`/pledge/${item.id}`}><button className="view-button">Open Pledge</button></Link>
                     <button className="join-button" onClick={() => this.joinPledge(item.id)}>
                       Join Pledge

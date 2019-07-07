@@ -7,13 +7,17 @@ import SignOutButton from "../components/SignOutButton/SignOutButton";
 import IconWSeeed from '../assets/images/white-seed.png';
 import PlantOverlay from "../components/PlantOverlay";
 
+import Loader from '../components/Loader';
+
+
 import NavBar from '../components/NavBar';
 
 const INITIAL_STATE = {
   pledge: [],
   pageLoaded: false,
   intervalId: 0,
-  show: false
+  show: false,
+  loading: true
 };
 
 class PledgeDetailPage extends Component {
@@ -29,7 +33,7 @@ class PledgeDetailPage extends Component {
     } = this.props;
     try {
       const { data } = await axios.get(`/pledges/${params.id}`);
-      this.setState({ pledge: data, pageLoaded: true });
+      this.setState({ pledge: data, pageLoaded: true, loading: false });
     } catch (err) {
       console.log(err.response);
     }
@@ -50,7 +54,6 @@ class PledgeDetailPage extends Component {
 
   showPlant() {
     this.setState({ show: true})
-    console.log("asd")
   }
   scrollStep() {
     if (window.pageYOffset === 0) {
@@ -65,10 +68,12 @@ class PledgeDetailPage extends Component {
   }
 
   render = () => {
+    const { pledge } = this.state;
     return (
       <Fragment>
         <div className="wrapper pledge-detail">
-          <NavBar/>
+          {pledge && <NavBar title={pledge.title}/>}
+          {this.state.loading && <Loader />}
           <div className="banner">
             <div className="info">
               <ul>
