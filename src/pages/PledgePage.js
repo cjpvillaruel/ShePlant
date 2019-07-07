@@ -10,6 +10,7 @@ import Seed from "../assets//images/seed-per-pledge.png"
 import '../assets/style/Pledge.scss'
 import NewSeedlingOverlay from "../components/NewSeedOverlay";
 import SeedlingOverlay from "../components/SeedlingOverlay";
+import PlantOverlay from "../components/PlantOverlay";
 
 const INITIAL_STATE = {
   pledges: [],
@@ -72,7 +73,8 @@ class PledgePage extends Component {
             
             </div>
             {/* <NewSeedlingOverlay /> */}
-            <SeedlingOverlay />
+            {/* <SeedlingOverlay /> */}
+             <PlantOverlay />
             <div className="pledge-container">
               {this.state.pledges.map(item => (
                 <div className="pledge-card" key={item.id}>

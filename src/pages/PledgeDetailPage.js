@@ -52,7 +52,7 @@ class PledgeDetailPage extends Component {
             <div className="info">
               <ul>
                 <li>Status:</li>
-                <li>1 of 30</li>
+                <li>30 of 30</li>
               </ul>
               <ul>
                 <li>Duration:</li>
