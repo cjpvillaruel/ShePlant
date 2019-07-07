@@ -83,6 +83,48 @@ class PledgeDetailPage extends Component {
                 <li>9:03 am</li>
               </ul>
             </div>
+            <div className="discussion">
+              <ul>
+                <li><div className="profile"></div></li>
+                <li>
+                  <h4>Antonio Wilson</h4>
+                  <p>I’ve really had a good time. I was able to push myself to do more and be more.</p>
+                  <ul>
+                    <li><button>Like</button></li>
+                    <li><button>Reply</button></li>
+                  </ul>
+                </li>
+                <li>9:03 am</li>
+              </ul>
+            </div>
+            <div className="discussion">
+              <ul>
+                <li><div className="profile"></div></li>
+                <li>
+                  <h4>Antonio Wilson</h4>
+                  <p>I’ve really had a good time. I was able to push myself to do more and be more.</p>
+                  <ul>
+                    <li><button>Like</button></li>
+                    <li><button>Reply</button></li>
+                  </ul>
+                </li>
+                <li>9:03 am</li>
+              </ul>
+            </div>
+            <div className="discussion">
+              <ul>
+                <li><div className="profile"></div></li>
+                <li>
+                  <h4>Antonio Wilson</h4>
+                  <p>I’ve really had a good time. I was able to push myself to do more and be more.</p>
+                  <ul>
+                    <li><button>Like</button></li>
+                    <li><button>Reply</button></li>
+                  </ul>
+                </li>
+                <li>9:03 am</li>
+              </ul>
+            </div>
             {/* <p>{this.state.pledge.id}</p> */}
             {/* <p>{this.state.pledge.title}</p> */}
             {/* <p>{this.state.pledge.created_at}</p>
@@ -94,88 +136,8 @@ class PledgeDetailPage extends Component {
               Join Pledge
           </button>
           </div>
-          <div className="details">
-            <h4>Details</h4>
-            <p>{this.state.pledge.description}</p>
-            <h4>Discussion</h4>
-            <div className="discussion">
-              <ul>
-                <li><div className="profile"></div></li>
-                <li>
-                  <h4>Antonio Wilson</h4>
-                  <p>I’ve really had a good time. I was able to push myself to do more and be more.</p>
-                  <ul>
-                    <li><button>Like</button></li>
-                    <li><button>Reply</button></li>
-                  </ul>
-                </li>
-                <li>9:03 am</li>
-              </ul>
-            </div>
-            {/* <p>{this.state.pledge.id}</p> */}
-            {/* <p>{this.state.pledge.title}</p> */}
-            {/* <p>{this.state.pledge.created_at}</p>
-            <p>{this.state.pledge.updated_at}</p> */}
-            {/* <p>{this.state.pledge.category}</p> */}
-            {this.state.pledge.posts &&
-              this.state.pledge.posts.map(item => <p>item</p>)}
-            <button onClick={() => this.joinPledge(this.state.pledge.id)}>
-              Join Pledge
-          </button>
-          <div className="discussion">
-              <ul>
-                <li><div className="profile"></div></li>
-                <li>
-                  <h4>Antonio Wilson</h4>
-                  <p>I’ve really had a good time. I was able to push myself to do more and be more.</p>
-                  <ul>
-                    <li><button>Like</button></li>
-                    <li><button>Reply</button></li>
-                  </ul>
-                </li>
-                <li>9:03 am</li>
-              </ul>
-            </div>
-            <div className="discussion">
-              <ul>
-                <li><div className="profile"></div></li>
-                <li>
-                  <h4>Antonio Wilson</h4>
-                  <p>I’ve really had a good time. I was able to push myself to do more and be more.</p>
-                  <ul>
-                    <li><button>Like</button></li>
-                    <li><button>Reply</button></li>
-                  </ul>
-                </li>
-                <li>9:03 am</li>
-              </ul>
-            </div>
-            <div className="discussion">
-              <ul>
-                <li><div className="profile"></div></li>
-                <li>
-                  <h4>Antonio Wilson</h4>
-                  <p>I’ve really had a good time. I was able to push myself to do more and be more.</p>
-                  <ul>
-                    <li><button>Like</button></li>
-                    <li><button>Reply</button></li>
-                  </ul>
-                </li>
-                <li>9:03 am</li>
-              </ul>
-            </div>
-            {/* <p>{this.state.pledge.id}</p> */}
-            {/* <p>{this.state.pledge.title}</p> */}
-            {/* <p>{this.state.pledge.created_at}</p>
-            <p>{this.state.pledge.updated_at}</p> */}
-            {/* <p>{this.state.pledge.category}</p> */}
-            {/* {this.state.pledge.posts &&
-              this.state.pledge.posts.map(item => <p>item</p>)}
-            <button onClick={() => this.joinPledge(this.state.pledge.id)}>
-              Join Pledge
-          </button> */}
+          
           </div>
-        </div>
       </Fragment>
     );
   };
