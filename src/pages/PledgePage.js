@@ -10,11 +10,12 @@ import Seed from "../assets//images/seed-per-pledge.png"
 import '../assets/style/Pledge.scss'
 import NewSeedlingOverlay from "../components/NewSeedOverlay";
 import SeedlingOverlay from "../components/SeedlingOverlay";
+import Loader from '../components/Loader';
 
 const INITIAL_STATE = {
   pledges: [],
   personalPledges: [],
-  pageLoaded: false
+  loading: true
 };
 
 class PledgePage extends Component {
@@ -32,7 +33,7 @@ class PledgePage extends Component {
       this.setState({
         personalPledges: personalPledgesData.data,
         pledges: pledgesData.data,
-        pageLoaded: true
+        loading: false
       });
       console.log(this.state);
     } catch (err) {
@@ -71,8 +72,10 @@ class PledgePage extends Component {
             <div className="banner">
             
             </div>
+
+            {this.state.loading && <Loader />}
             {/* <NewSeedlingOverlay /> */}
-            <SeedlingOverlay />
+            {/* <SeedlingOverlay /> */}
             <div className="pledge-container">
               {this.state.pledges.map(item => (
                 <div className="pledge-card" key={item.id}>
@@ -81,7 +84,7 @@ class PledgePage extends Component {
                     <img className="seed-per-pledge" src={Seed} alt="option" />
                     <h4 className="title" >{item.title}</h4>
                     <p className="duration"><label>Duration:</label>30 days</p>
-                    <p className="description">{item.description}</p>    
+                    <p className="description">{`${item.description.substr(1, 55)}...`}</p>    
                     <button className="view-button">Open Pledge</button>
                     <button className="join-button" onClick={() => this.joinPledge(item.id)}>
                       Join Pledge
