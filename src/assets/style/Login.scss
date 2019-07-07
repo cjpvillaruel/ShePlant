@@ -34,6 +34,9 @@ form {
 .login {
     text-align: center;
     padding: 30px 20px !important;
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
     form {
         text-align: center;
         padding: 40px 30px !important;
