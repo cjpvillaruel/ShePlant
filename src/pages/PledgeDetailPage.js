@@ -133,11 +133,11 @@ class PledgeDetailPage extends Component {
             {/* <p>{this.state.pledge.created_at}</p>
             <p>{this.state.pledge.updated_at}</p> */}
             {/* <p>{this.state.pledge.category}</p> */}
-            {this.state.pledge.posts &&
+            {/* {this.state.pledge.posts &&
               this.state.pledge.posts.map(item => <p>item</p>)}
             <button onClick={() => this.joinPledge(this.state.pledge.id)}>
               Join Pledge
-          </button>
+          </button> */}
           </div>
           
           </div>
