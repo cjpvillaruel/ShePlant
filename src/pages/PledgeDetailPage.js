@@ -6,6 +6,7 @@ import { withFirebase } from "../components/Firebase";
 import SignOutButton from "../components/SignOutButton/SignOutButton";
 import IconWSeeed from '../assets/images/white-seed.png';
 import PlantOverlay from "../components/PlantOverlay";
+import SeedlingOverlay from "../components/SeedlingOverlay";
 
 import Loader from '../components/Loader';
 
@@ -17,6 +18,7 @@ const INITIAL_STATE = {
   pageLoaded: false,
   intervalId: 0,
   show: false,
+  showSeedling: false,
   loading: true
 };
 
@@ -52,8 +54,20 @@ class PledgeDetailPage extends Component {
     }
   };
 
-  showPlant() {
+  showPlant = () =>{
     this.setState({ show: true})
+    setTimeout(() => {
+      this.setState({ show: false})
+    }, 20000);
+  }
+  showSeedling = () =>{
+    this.setState({ showSeedling: true})
+  }
+  closeSeedling = () =>{
+    this.setState({ showSeedling: false })
+  }
+  closePlant = () =>{
+    this.setState({ show: false})
   }
   scrollStep() {
     if (window.pageYOffset === 0) {
@@ -85,14 +99,14 @@ class PledgeDetailPage extends Component {
                 <li>{this.state.pledge.duration}</li>
               </ul>
             </div>
-            <button>Done</button>
+            <button onClick={this.showPlant}>Done</button>
           </div>
           <div className="top">
             <ul className="total-pledge">
               <li>1, 987</li>
               <li>Total Pledges</li>
             </ul>
-            <button onClick={this.showPlant}><img src={IconWSeeed} alt="White Seed" />Check my Seed</button>
+            <button onClick={this.showSeedling}><img src={IconWSeeed} alt="White Seed" />Check my Seed</button>
           </div>
           <div className="details">
             <h4>Details</h4>
@@ -167,7 +181,8 @@ class PledgeDetailPage extends Component {
           </div>
           
           </div>
-          {this.state.show && <PlantOverlay />}
+          {this.state.showSeedling && <SeedlingOverlay onclose={this.closeSeedling}/>}
+          {this.state.show && <PlantOverlay onclose={this.closePlant}/>}
       </Fragment>
     );
   };

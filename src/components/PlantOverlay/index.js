@@ -5,7 +5,7 @@ import  Fade  from "react-reveal/Fade";
 
 
 
-const PlantOverlay = () => (
+const PlantOverlay = (props) => (
     <div>
         <Fade delay={100} duration={2000}>
             <div className="overlay">
@@ -14,20 +14,20 @@ const PlantOverlay = () => (
             <div className="seed-bg plant">
                 <img className="seed-img" src={Plant} alt="option" />
             </div>
-            <button>Got it!</button>
+            <button onClick={props.onclose}>Got it!</button>
             </div>
         </Fade>
-        <div class="container-confetti">
-            <div class="confetti"></div>
-            <div class="confetti"></div>
-            <div class="confetti"></div>
-            <div class="confetti"></div>
-            <div class="confetti"></div>
-            <div class="confetti"></div>
-            <div class="confetti"></div>
-            <div class="confetti"></div>
-            <div class="confetti"></div>
-            <div class="confetti"></div>
+        <div className="container-confetti">
+            <div className="confetti"></div>
+            <div className="confetti"></div>
+            <div className="confetti"></div>
+            <div className="confetti"></div>
+            <div className="confetti"></div>
+            <div className="confetti"></div>
+            <div className="confetti"></div>
+            <div className="confetti"></div>
+            <div className="confetti"></div>
+            <div className="confetti"></div>
         </div>
     </div>
 )

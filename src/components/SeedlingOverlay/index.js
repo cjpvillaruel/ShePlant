@@ -5,7 +5,7 @@ import  Fade  from "react-reveal/Fade";
 
 
 
-const SeedlingOverlay = () => (
+const SeedlingOverlay = (props) => (
   <Fade delay={100} duration={2000}>
     <div className="overlay">
       <h1>Your seed is growing. Keep it up!</h1>
@@ -13,7 +13,7 @@ const SeedlingOverlay = () => (
       <div className="seed-bg">
         <img className="seed-img" src={Seedling} alt="option" />
       </div>
-      <button>Got it!</button>
+      <button onClick={props.onclose}>Got it!</button>
     </div>
   </Fade>
 )
