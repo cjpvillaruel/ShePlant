@@ -1,0 +1,145 @@
+.pledge-detail {
+    padding: 0 !important;
+    color: #757575;
+    .banner {
+        background: #9DBF7F url('../images/pledge-zumba.png');
+        background-size: cover;
+        background-position: center;
+        padding: 50px 20px;
+        button {
+            margin: 20px auto 0;
+            display: block;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.34);
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 8px 30px;
+        }
+        .info {
+            padding: 0;
+            margin: 0 auto;
+            text-align: center;
+            width: 200px;
+            display: block;
+            ul {
+                color: #fff;
+                margin: 0 10px;
+                font-size: 16px;
+                padding: 0;
+                display: inline-block;
+                position: relative;
+                &:first-child::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    height: 46px;
+                    border-right: 2px solid #fff;
+                    right: 0;
+                    margin-right: -12px;
+                    top: 0;
+                }
+                li {
+                    list-style: none;
+                    &:last-child {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        
+    }
+    .top {
+        text-align: center;
+        padding: 25px 20px;
+        display: block;
+        box-shadow: 2px 2px 4px 2px #EEEEEE;
+        margin: 0 auto; 
+        > * {
+            padding: 0;
+            display: inline-block;
+            margin: 0;
+        }
+        ul {
+            margin: 0 6%;
+            vertical-align: middle;
+            li {
+                list-style: none;
+                &:first-child {
+                    font-weight: bold;
+                    color: #C8689B;
+                }
+            }
+        }
+        button {
+            background: #6C8C10;
+            padding: 8px 14px;
+            color: #fff;
+            img {
+                display: inline-block;
+                vertical-align: middle;
+                max-width: 21px;
+                margin-right: 12px;
+            }
+        }
+    }
+    .details {
+        padding: 20px;
+        h4 {
+            margin-top: 0;
+            color: #757575;
+            text-align: center;
+            font-size: 16px;
+        }
+        .discussion {
+            display: flex;
+            box-shadow: 2px 2px 21px 3px rgba(0,0,0,0.07);
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+            ul {
+                margin: 0 auto;
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                > li {
+                    list-style: none;
+                    .profile {
+                        height: 50px;
+                        width: 50px;
+                        background: #BDBDBD;
+                        border-radius: 4px;
+                    }
+                    &:nth-child(2) {
+                        margin: 0 10px;
+                    }
+                    h4 { 
+                        text-align: left;
+                    }
+                    > ul {
+                        li {
+                            button {
+                                background: transparent;
+                                border-radius: 8px;
+                                padding: 8px 13px;
+                                
+                            }
+                            &:first-child {
+                                button{
+                                    border: 2px solid #C8689B;
+                                }
+                                
+                            }
+                            &:last-child {
+                                button {
+                                    border: 2px solid #BDBDBD;
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
