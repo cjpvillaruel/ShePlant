@@ -4,6 +4,11 @@ import { withRouter } from "react-router-dom";
 
 import { withFirebase } from "../components/Firebase";
 import SignOutButton from "../components/SignOutButton/SignOutButton";
+import NavBar from '../components/NavBar';
+
+import Seed from "../assets//images/seed-per-pledge.png"
+import '../assets/style/Pledge.scss'
+import NewSeedlingOverlay from "../components/NewSeedOverlay";
 
 const INITIAL_STATE = {
   pledges: [],
@@ -52,7 +57,7 @@ class PledgePage extends Component {
     return (
       <Fragment>
         {/* Plant */}
-        {this.state.personalPledges.length > 0 ? (
+        {this.state.personalPledges.length < 0 ? (
           <Fragment>
             <p>Plant should be here</p>
             <p>Pledge: {this.state.personalPledges[0].title}</p>
@@ -60,27 +65,29 @@ class PledgePage extends Component {
             <SignOutButton />
           </Fragment>
         ) : (
-          // Pledges to Join
           <Fragment>
-            {this.state.pledges.map(item => (
-              <Fragment key={item.id}>
-                <p>{item.id}</p>
-                <p>{item.title}</p>
-                <p>{item.description}</p>
-                <p>{item.duration}</p>
-                <p>{item.created_at}</p>
-                <p>{item.updated_at}</p>
-                <p>{item.category}</p>
-                <button
-                  onClick={() => this.props.history.push("/pledge/" + item.id)}
-                >
-                  Open Pledge
-                </button>
-                <button onClick={() => this.joinPledge(item.id)}>
-                  Join Pledge
-                </button>
-              </Fragment>
-            ))}
+            <NavBar />
+            <div className="banner">
+            
+            </div>
+            <NewSeedlingOverlay />
+            <div className="pledge-container">
+              {this.state.pledges.map(item => (
+                <div className="pledge-card" key={item.id}>
+                  <div className="thumbnail" style={{backgroundImage: `url(${item.image_url})`}}></div>
+                  <div className="details">
+                    <img className="seed-per-pledge" src={Seed} alt="option" />
+                    <h4 className="title" >{item.title}</h4>
+                    <p className="duration"><label>Duration:</label>30 days</p>
+                    <p className="description">{item.description}</p>    
+                    <button className="view-button">Open Pledge</button>
+                    <button className="join-button" onClick={() => this.joinPledge(item.id)}>
+                      Join Pledge
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </Fragment>
         )}
       </Fragment>

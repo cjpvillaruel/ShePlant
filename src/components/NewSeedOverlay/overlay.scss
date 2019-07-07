@@ -1,0 +1,52 @@
+.overlay {
+  display: block;
+  top: 0;
+  height: 100vh;
+  z-index: 10;
+  position: fixed;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+  background-color: rgba($color: #000000, $alpha: 0.75);
+
+  .seed-bg {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+
+    .seed-img {
+      width: 45px;
+    }
+  }
+
+  h1, h3, p {
+    color: white;
+    text-align: center;
+  }
+
+  h1 {
+    font-weight: 300;
+  }
+
+  h3 {
+    font-weight: 300;
+    width: 75%;
+  }
+
+  button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    height: 50px;
+    width: 165px;
+    margin-top: 40px;
+    border-radius: 20px;
+  }
+}
