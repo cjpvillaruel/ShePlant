@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import axios from "axios";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 import { withFirebase } from "../components/Firebase";
 import SignOutButton from "../components/SignOutButton/SignOutButton";
@@ -85,7 +85,7 @@ class PledgePage extends Component {
                     <h4 className="title" >{item.title}</h4>
                     <p className="duration"><label>Duration:</label>30 days</p>
                     <p className="description">{`${item.description.substr(1, 55)}...`}</p>    
-                    <button className="view-button">Open Pledge</button>
+                    <Link to={`/pledge/${item.id}`}><button className="view-button">Open Pledge</button></Link>
                     <button className="join-button" onClick={() => this.joinPledge(item.id)}>
                       Join Pledge
                     </button>
