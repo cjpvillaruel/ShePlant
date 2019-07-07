@@ -5,19 +5,21 @@ import { withRouter } from "react-router-dom";
 import { withFirebase } from "../components/Firebase";
 import SignOutButton from "../components/SignOutButton/SignOutButton";
 import IconWSeeed from '../assets/images/white-seed.png';
+import PlantOverlay from "../components/PlantOverlay";
 
 import NavBar from '../components/NavBar';
 
 const INITIAL_STATE = {
   pledge: [],
   pageLoaded: false,
-  intervalId: 0
+  intervalId: 0,
+  show: false
 };
 
 class PledgeDetailPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { ...INITIAL_STATE };
+    this.state = { ...INITIAL_STATE};
   }
 
   async componentDidMount() {
@@ -46,6 +48,10 @@ class PledgeDetailPage extends Component {
     }
   };
 
+  showPlant() {
+    this.setState({ show: true})
+    console.log("asd")
+  }
   scrollStep() {
     if (window.pageYOffset === 0) {
         clearInterval(this.state.intervalId);
@@ -81,7 +87,7 @@ class PledgeDetailPage extends Component {
               <li>1, 987</li>
               <li>Total Pledges</li>
             </ul>
-            <button><img src={IconWSeeed} alt="White Seed" />Check my Seed</button>
+            <button onClick={this.showPlant}><img src={IconWSeeed} alt="White Seed" />Check my Seed</button>
           </div>
           <div className="details">
             <h4>Details</h4>
@@ -156,6 +162,7 @@ class PledgeDetailPage extends Component {
           </div>
           
           </div>
+          {this.state.show && <PlantOverlay />}
       </Fragment>
     );
   };
