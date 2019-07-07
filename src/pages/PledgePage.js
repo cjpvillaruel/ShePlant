@@ -69,7 +69,7 @@ class PledgePage extends Component {
           </Fragment>
         ) : (
           <Fragment>
-            <NavBar />
+            <NavBar title="Pledges"/>
             <div className="banner">
             
             </div>
