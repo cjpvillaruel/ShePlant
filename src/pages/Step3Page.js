@@ -20,7 +20,7 @@ class Step3Page extends Component {
           <Fade top delay={1000}>
             <div className="round"><img src={ImgPlant} alt="Plant" /></div>
          </Fade>
-          <Link  className="btn-link" to={ROUTES.PLEDGES}>Let's gets started!</Link>
+          <Link  className="btn-link" to={ROUTES.PLEDGES}>Let's get started!</Link>
         </div>
       </div>
     );
