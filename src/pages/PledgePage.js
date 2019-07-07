@@ -15,7 +15,9 @@ import Loader from '../components/Loader';
 const INITIAL_STATE = {
   pledges: [],
   personalPledges: [],
-  loading: true
+  loading: true,
+  pledgeData: {},
+  showNewSeedOverlay: false
 };
 
 class PledgePage extends Component {
@@ -47,8 +49,7 @@ class PledgePage extends Component {
         `users/${localStorage.getItem("userId")}/pledges?pledge_id=${pledgeId}`
       );
       if (data) {
-        console.log(data);
-        window.location.reload();
+        this.setState({ showNewSeedOverlay: true, pledgeData: data})
       }
     } catch (err) {
       console.log(err.response);
@@ -74,7 +75,7 @@ class PledgePage extends Component {
             </div>
 
             {this.state.loading && <Loader />}
-            {/* <NewSeedlingOverlay /> */}
+            {this.state.showNewSeedOverlay && <NewSeedlingOverlay data={this.state.pledgeData} />}
             {/* <SeedlingOverlay /> */}
             <div className="pledge-container">
               {this.state.pledges.map(item => (
