@@ -6,6 +6,8 @@ import { withFirebase } from "../components/Firebase";
 import SignOutButton from "../components/SignOutButton/SignOutButton";
 import IconWSeeed from '../assets/images/white-seed.png';
 
+import NavBar from '../components/NavBar';
+
 const INITIAL_STATE = {
   pledge: [],
   pageLoaded: false
@@ -45,6 +47,7 @@ class PledgeDetailPage extends Component {
     return (
       <Fragment>
         <div className="wrapper pledge-detail">
+          <NavBar/>
           <div className="banner">
             <div className="info">
               <ul>
