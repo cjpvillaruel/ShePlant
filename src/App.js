@@ -19,6 +19,7 @@ function App() {
     <Router>
       <div className="App">
         <Route path={ROUTES.LOGIN} component={LoginPage} />
+        <Route exact path={ROUTES.LANDING} component={LoginPage} />
         <Route path={ROUTES.HOME} component={HomePage} />
         <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
         <Route path={ROUTES.PLEDGES} component={PledgePage} />
