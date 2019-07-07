@@ -10,7 +10,8 @@ import NavBar from '../components/NavBar';
 
 const INITIAL_STATE = {
   pledge: [],
-  pageLoaded: false
+  pageLoaded: false,
+  intervalId: 0
 };
 
 class PledgeDetailPage extends Component {
@@ -20,6 +21,7 @@ class PledgeDetailPage extends Component {
   }
 
   async componentDidMount() {
+    this.scrollToTop()
     const {
       match: { params }
     } = this.props;
@@ -30,6 +32,7 @@ class PledgeDetailPage extends Component {
       console.log(err.response);
     }
   }
+  
 
   joinPledge = async pledgeId => {
     try {
@@ -42,6 +45,18 @@ class PledgeDetailPage extends Component {
       console.log(err.response);
     }
   };
+
+  scrollStep() {
+    if (window.pageYOffset === 0) {
+        clearInterval(this.state.intervalId);
+    }
+    window.scroll(0, window.pageYOffset - 50);
+  }
+  
+  scrollToTop() {
+    let intervalId = setInterval(this.scrollStep.bind(this), 16.66);
+    this.setState({ intervalId: intervalId });
+  }
 
   render = () => {
     return (

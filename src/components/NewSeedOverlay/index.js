@@ -2,10 +2,11 @@ import React from 'react';
 import './overlay.scss';
 import Seed from "../../assets//images/seed.png";
 import  Fade  from "react-reveal/Fade";
+import { withRouter, Link } from "react-router-dom";
 
 
 
-const NewSeedlingOverlay = () => (
+const NewSeedlingOverlay = (props) => (
   <Fade delay={100} duration={2000}>
     <div className="overlay">
       <h1>You've got a seed!</h1>
@@ -13,9 +14,9 @@ const NewSeedlingOverlay = () => (
       <div className="seed-bg">
         <img className="seed-img" src={Seed} alt="option" />
       </div>
-      <button>Got it!</button>
+      <Link to={`/pledge/${props.data.pledge.id}`}><button>Got it!</button></Link>
     </div>
   </Fade>
 )
 
-export default NewSeedlingOverlay;
+export default withRouter(NewSeedlingOverlay);
