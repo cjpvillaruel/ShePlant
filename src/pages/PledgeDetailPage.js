@@ -116,7 +116,7 @@ class PledgeDetailPage extends Component {
               <ul>
                 <li><div className="profile"></div></li>
                 <li>
-                  <h4>Antonio Wilson</h4>
+                  <h4>Antonia Wilson</h4>
                   <p>I’ve really had a good time. I was able to push myself to do more and be more.</p>
                   <ul>
                     <li><button>Like</button></li>
@@ -130,7 +130,7 @@ class PledgeDetailPage extends Component {
               <ul>
                 <li><div className="profile"></div></li>
                 <li>
-                  <h4>Antonio Wilson</h4>
+                  <h4>Antonia Wilson</h4>
                   <p>I’ve really had a good time. I was able to push myself to do more and be more.</p>
                   <ul>
                     <li><button>Like</button></li>
@@ -144,7 +144,7 @@ class PledgeDetailPage extends Component {
               <ul>
                 <li><div className="profile"></div></li>
                 <li>
-                  <h4>Antonio Wilson</h4>
+                  <h4>Antonia Wilson</h4>
                   <p>I’ve really had a good time. I was able to push myself to do more and be more.</p>
                   <ul>
                     <li><button>Like</button></li>
@@ -158,7 +158,7 @@ class PledgeDetailPage extends Component {
               <ul>
                 <li><div className="profile"></div></li>
                 <li>
-                  <h4>Antonio Wilson</h4>
+                  <h4>Antonia Wilson</h4>
                   <p>I’ve really had a good time. I was able to push myself to do more and be more.</p>
                   <ul>
                     <li><button>Like</button></li>
